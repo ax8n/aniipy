@@ -61,17 +61,6 @@ def check_expiry(user_id, csv_data):
                 live_text(f"    ✅ Your access is valid. Time remaining: {remaining_time}")
             return
 
-    if all_users_allowed and expiry_date:
-        current_time = datetime.now()
-        if current_time > expiry_date:
-            live_text(f"     ⏳ Your free time is over! Please contact the developer for more time.")
-            webbrowser.open("https://t.me/aniisolo")
-            exit()
-        else:
-            remaining_time = expiry_date - current_time
-            live_text(f"    ✅ Free access is valid. Time remaining: {remaining_time}")
-        return
-
     if not user_found:
         live_text(f"    🚫 You are not authorized! Please contact the developer.")
         live_text(f"    📩 Contact: https://t.me/AniiRo")
