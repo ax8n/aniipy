@@ -21,7 +21,7 @@ def fetch_csv(url):
         response.raise_for_status()  
         return response.text
     except requests.exceptions.RequestException as e:
-        live_text(f"🚨 Error fetching CSV: {e}")
+        live_text(f"{white}➜ {red}Error fetching CSV: {e}")
         return None
 
 def check_expiry(user_id, csv_data):
@@ -39,7 +39,7 @@ def check_expiry(user_id, csv_data):
             try:
                 expiry_date = datetime.strptime(row[1], "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                live_text(f"    🚨 Error: Invalid date format in CSV!")
+                live_text(f"{white}➜ {red}Error: Invalid date format in CSV!")
                 return
             break
         elif row[0] == user_id:
@@ -47,13 +47,13 @@ def check_expiry(user_id, csv_data):
             try:
                 expiry_date = datetime.strptime(row[1], "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                live_text(f"   🚨 Error: Invalid date format in CSV!")
+                live_text(f"{white}➜ {red}Error: Invalid date format in CSV!")
                 return
 
             current_time = datetime.now()
             if current_time > expiry_date:
-                live_text(f"    ⏳ Your access has expired! Please contact the developer for more time.")
-                live_text(f"    📩 Contact: https://t.me/AniiRo")
+                live_text(f"{red}[!] Your access has expired! Please contact the developer for more time.")
+                live_text(f"{white}➜ {yellow}Contact: @AniiRo")
                 webbrowser.open("https://t.me/aniisolo")
                 exit()
             else:
@@ -62,9 +62,9 @@ def check_expiry(user_id, csv_data):
             return
 
     if not user_found:
-        live_text(f"    🚫 You are not authorized! Please contact the developer.")
-        live_text(f"    📩 Contact: https://t.me/AniiRo")
-        webbrowser.open("https://t.me/aniisolo")
+        live_text(f"{white}➜ {red}You are not authorized! Please contact the developer.")
+        live_text(f"{white}➜ {yellow}Contact: @AniiRo")
+        webbrowser.open("https://t.me/AniiRo")
         exit()
 
 csv_content = fetch_csv(CSV_URL)
