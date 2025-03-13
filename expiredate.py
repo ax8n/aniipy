@@ -16,7 +16,7 @@ BOLD_GREEN = "\033[1;92m"
 BOLD_RED = "\033[1;91m"
 
 # 🔹 Set Expiry Date & Time
-EXPIRY_TIME = "2025-03-13 23:59:59"  # Format: "YYYY-MM-DD HH:MM:SS"
+EXPIRY_TIME = "2025-03-14 11:59:59"  # Format: "YYYY-MM-DD HH:MM:SS"
 
 # Convert expiry time to UNIX timestamp
 expiry_date = time.mktime(time.strptime(EXPIRY_TIME, "%Y-%m-%d %H:%M:%S"))
