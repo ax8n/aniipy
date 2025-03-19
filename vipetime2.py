@@ -58,8 +58,7 @@ def check_expiry(user_id, csv_data):
                 exit()
             else:
                 remaining_time = expiry_date - current_time
-                combo("➜ Your access is valid! Time remaining: ", BOLD_YELLOW, delay=0.03, end="")
-                combo(str(remaining_time), BOLD_GREEN, delay=0.03)
+                combo("➜ Your access is valid! Time remaining: ", BOLD_YELLOW, delay=0.03, end="") combo(str(remaining_time), BOLD_GREEN, delay=0.03)
             return
 
     if not user_found:
