@@ -9,7 +9,7 @@ BOT_USERNAME = "Enclvebot"
 client = TelegramClient("bot_sesn", api_id=6, api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e").start(bot_token=BOT_TOKEN)
 
 # 🔥 Required Channels for Membership Check
-REQUIRED_CHANNELS = [-1002628372650, "@Raremiddelman"]
+REQUIRED_CHANNELS = ["@AniiPlug", "@Raremiddelman"]
 
 # 🔥 Pending Requests Dictionary
 pending_requests = {}
@@ -88,7 +88,7 @@ async def leader_handler(event):
     caption_text = (
         "<b>👑 Leader Details</b>\n"
         "<b>👤 Username:</b> @AniiRo\n"
-        "<b>📌 Channel:</b> <a href='https://t.me/+5hQSRZg96VY2MmFl'>𝐀𝐍𝐈𝐈 𝐏𝐎𝐑𝐓𝐀𝐋</a>\n"
+        "<b>📌 Channel:</b> <a href='https://t.me/AniiPlug'>𝐀𝐍𝐈𝐈 𝐏𝐎𝐑𝐓𝐀𝐋</a>\n"
         "<b>📌 Hobby:</b> File Maker 💋🔥\n"
         "<b>📞 Contact:</b> <a href='tg://user?id=5300575173'>𝐀𝐍𝐈𝐈</a>"
     )
