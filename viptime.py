@@ -65,7 +65,7 @@ def check_expiry(user_id, csv_data):
                 formatted_remaining = f"{days} days, {hours:02d}:{minutes:02d}:{seconds:02d}"
 
                 combo("\n➜ Time Remaining:", BOLD_YELLOW)
-                combo(f"➜ {formatted_remaining}", BOLD_GREEN)
+                combo(f"➜ {formatted_remaining}    ", BOLD_GREEN)
             return
 
     if not user_found:
