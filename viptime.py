@@ -15,7 +15,7 @@ CSV_URL = "https://raw.githubusercontent.com/ax8n/aniipy/refs/heads/main/expire_
 
 # 🔹 Typewriter Effect Function
 def combo(s, color="", delay=0.03, end="\n"):
-    sys.stdout.write(color + s + '\033[0m' + end)
+    sys.stdout.write("\n" + color + s + '\033[0m' + end)  # ✅ Output hamesha nayi line se start hoga
     sys.stdout.flush()
     time.sleep(delay)
 
@@ -26,7 +26,7 @@ def fetch_csv(url):
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
-        combo("\n➜ Error fetching CSV: " + str(e), BOLD_RED)
+        combo("➜ Error fetching CSV: " + str(e), BOLD_RED)
         return None
 
 # 🔹 Check Expiry (Only Remaining Time)
@@ -43,7 +43,7 @@ def check_expiry(user_id, csv_data):
             try:
                 expiry_date = datetime.strptime(row[1], "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                combo("\n➜ Error: Invalid date format in CSV!", BOLD_RED)
+                combo("➜ Error: Invalid date format in CSV!", BOLD_RED)
                 return
 
             current_time = datetime.now()
@@ -51,7 +51,7 @@ def check_expiry(user_id, csv_data):
             current_timestamp = current_time.timestamp()
 
             if current_timestamp > expiry_timestamp:
-                combo("\n➜ Your access has expired! Please contact the developer for more time.", BOLD_RED)
+                combo("➜ Your access has expired! Please contact the developer for more time.", BOLD_RED)
                 combo("➜ Contact: @AniiRo", BOLD_GREEN)
                 webbrowser.open("https://t.me/AniiRo")
                 exit()
@@ -64,12 +64,12 @@ def check_expiry(user_id, csv_data):
 
                 formatted_remaining = f"{days} days, {hours:02d}:{minutes:02d}:{seconds:02d}"
 
-                combo("\n➜ Time Remaining:", BOLD_YELLOW)
-                combo(f"➜ {formatted_remaining}", BOLD_GREEN)
+                combo("➜ Time Remaining:", BOLD_YELLOW)
+                combo(f"➜ {formatted_remaining}"      , BOLD_GREEN)
             return
 
     if not user_found:
-        combo("\n➜ Access denied! You must purchase the tool first before continuing.", BOLD_RED)
+        combo("➜ Access denied! You must purchase the tool first before continuing.", BOLD_RED)
         combo("➜ Contact: @AniiRo", BOLD_GREEN)
         webbrowser.open("https://t.me/AniiRo")
         exit()
