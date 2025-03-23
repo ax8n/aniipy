@@ -15,7 +15,7 @@ CSV_URL = "https://raw.githubusercontent.com/ax8n/aniipy/refs/heads/main/expire_
 
 # 🔹 Typewriter Effect Function
 def combo(s, color="", delay=0.03, end="\n"):
-    sys.stdout.write("\n" + color + s + '\033[0m' + end)  # ✅ Output hamesha nayi line se start hoga
+    sys.stdout.write(color + s + '\033[0m' + end)
     sys.stdout.flush()
     time.sleep(delay)
 
@@ -51,7 +51,7 @@ def check_expiry(user_id, csv_data):
             current_timestamp = current_time.timestamp()
 
             if current_timestamp > expiry_timestamp:
-                combo("➜ Your access has expired! Please contact the developer for more time.", BOLD_RED)
+                combo("\n➜ Your access has expired! Please contact the developer for more time.", BOLD_RED)
                 combo("➜ Contact: @AniiRo", BOLD_GREEN)
                 webbrowser.open("https://t.me/AniiRo")
                 exit()
@@ -64,12 +64,12 @@ def check_expiry(user_id, csv_data):
 
                 formatted_remaining = f"{days} days, {hours:02d}:{minutes:02d}:{seconds:02d}"
 
-                combo("➜ Time Remaining:", BOLD_YELLOW)
-                combo(f"➜ {formatted_remaining}"      , BOLD_GREEN)
+                combo("\n➜ Time Remaining:", BOLD_YELLOW)
+                combo(f"➜ {formatted_remaining}", BOLD_GREEN)
             return
 
     if not user_found:
-        combo("➜ Access denied! You must purchase the tool first before continuing.", BOLD_RED)
+        combo("\n➜ Access denied! You must purchase the tool first before continuing.", BOLD_RED)
         combo("➜ Contact: @AniiRo", BOLD_GREEN)
         webbrowser.open("https://t.me/AniiRo")
         exit()
