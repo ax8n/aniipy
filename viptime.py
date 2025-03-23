@@ -52,7 +52,7 @@ def check_expiry(user_id, csv_data):
             if current_time > expiry_date:
                 combo("➜ Your access has expired! Please contact the developer for more time.", BOLD_RED)
                 combo("➜ Contact: @AniiRo    ", BOLD_GREEN)
-                webbrowser.open("https://t.m/AniiRo")
+                webbrowser.open("https://t.me/AniiRo")
                 exit()
             else:
                 remaining_time = expiry_date - current_time
