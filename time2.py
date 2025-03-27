@@ -4,7 +4,7 @@ import sys
 import time
 import webbrowser
 from datetime import datetime
-EXPIRE_TIME = '2024-03-24 20:50:20'
+EXPIRE_TIME = '2026-03-24 20:50:20'
 EXPIRE_MSG = '\033[91m➜ This tool has been stopped by the developer.'
 
 def check_expiration():
