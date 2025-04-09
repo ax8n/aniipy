@@ -52,7 +52,7 @@ def check_expiry(user_id, csv_data):
 
             if current_timestamp > expiry_timestamp:
                 combo("\n➜ Your access has expired! Please contact the developer for more time.", BOLD_RED)
-                combo("➜ Contact: @Iexcy", BOLD_GREEN)
+                combo("➜ Contact: @Iexcy   ", BOLD_GREEN)
                 webbrowser.open("https://t.me/Iexcy")
                 exit()
             else:
@@ -70,7 +70,7 @@ def check_expiry(user_id, csv_data):
 
     if not user_found:
         combo("\n➜ Access denied! You must purchase the tool first before continuing.", BOLD_RED)
-        combo("➜ Contact: @Iexcy", BOLD_GREEN)
+        combo("➜ Contact: @Iexcy   ", BOLD_GREEN)
         webbrowser.open("https://t.me/Iexcy")
         exit()
 
