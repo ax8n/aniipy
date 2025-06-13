@@ -11,7 +11,7 @@ BOLD_GREEN = "\033[1;92m"
 BOLD_RED = "\033[1;91m"
 
 # 🔹 CSV File Link (GitHub)
-CSV_URL = "https://raw.githubusercontent.com/ax8n/aniipy/refs/heads/main/expire_list.csv"
+CSV_URL = "https://raw.githubusercontent.com/mashogu/Mash-/refs/heads/main/Expire%20_list.csv?token=GHSAT0AAAAAADFTBMLAVOYWF6WUZMX7YVSE2CL6CSA"
 
 # 🔹 Typewriter Effect Function
 def combo(s, color="", delay=0.03, end="\n"):
